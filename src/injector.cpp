@@ -58,6 +58,12 @@ proc_info get_process_info(const std::string& name)
 	return info;
 }
 
+std::string get_filename_from_path(const std::string& path)
+{
+	size_t slash = path.find_last_of("\\/");
+	return (slash != std::string::npos) ? path.substr(slash + 1) : path;
+}
+
 bool inject(const std::string& dll_path, const DWORD process_id)
 {
 	HANDLE h = OpenProcess(PROCESS_ALL_ACCESS, FALSE, process_id);

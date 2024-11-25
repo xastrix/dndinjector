@@ -1,11 +1,5 @@
 #include "injector.h"
 
-static std::string get_filename_from_path(const std::string& path)
-{
-	size_t slash = path.find_last_of("\\/");
-	return (slash != std::string::npos) ? path.substr(slash + 1) : path;
-}
-
 int main(int argc, const char** argv)
 {
 	if (argc < 2) {

@@ -13,4 +13,5 @@ struct proc_info {
 
 std::string get_dll_path_from_clipboard();
 proc_info get_process_info(const std::string& name);
+std::string get_filename_from_path(const std::string& path);
 bool inject(const std::string& dll_path, const DWORD process_id);
